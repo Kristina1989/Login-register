@@ -13,19 +13,20 @@ function App() {
 
     const [getUsers, setUsers] = useState([])
     const [getPage, setPage] = useState("")
+    const [getLoged, setLoged] = useState(null)
 
 
 
   return (
     <div className="App">
 
-      <MainContext.Provider value={{getUsers, setUsers, getPage, setPage}}>
+      <MainContext.Provider value={{getUsers, setUsers, getPage, setPage, getLoged}}>
           <BrowserRouter>
               <Toolbar/>
              <Routes>
-                 <Route path={"/"} elelement={<HomePage />}/>
-                 <Route path={"/register"} elelement={<RegistrationPage />}/>
-                 <Route path={"/login"} elelement={<LoginPage/>}/>
+                 <Route path={"/"} element={<HomePage />}/>
+                 <Route path={"/register"} element={<RegistrationPage />}/>
+                 <Route path={"/login"} element={<LoginPage/>}/>
 
 
 

@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
+import LoginInput from "../Components/LoginInput";
 
-class LoginPage extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
-}
+const LoginPage = () => {
+    return (
+        <div>
+            <LoginInput/>
+        </div>
+    );
+};
 
 export default LoginPage;

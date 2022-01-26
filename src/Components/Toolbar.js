@@ -1,16 +1,19 @@
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 import MainContext from "../Context/MainContext";
+import {useNavigate} from "react-router-dom";
 
 
 const Toolbar = () => {
 
     const {getPage} = useContext(MainContext)
     const {setPage} = useContext(MainContext)
+    const nav = useNavigate()
 
 
 
     function goTo (address) {
         setPage(address)
+        nav(address)
 
     }
     return (
