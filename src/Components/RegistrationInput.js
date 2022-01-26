@@ -3,32 +3,31 @@ import MainContext from "../Context/MainContext";
 import {useNavigate} from "react-router-dom";
 
 const RegistrationInput = () => {
-    const nav = useNavigate()
 
     const userNameRef = useRef()
     const PassOneRef = useRef()
     const PassTwoRef = useRef()
 
     const {getUsers, setUsers} = useContext(MainContext)
+    const nav = useNavigate()
 
 
     function register() {
-        const user = {
-            userName: userNameRef.current.value,
-            passOne: PassOneRef.current.value,
-            passTwo: PassTwoRef.current.value
+
+        if (PassOneRef.current.value === PassTwoRef.current.value) {
+
+            const user = {
+                userName: userNameRef.current.value,
+                passOne: PassOneRef.current.value,
+                passTwo: PassTwoRef.current.value
+            }
+            setUsers([...getUsers, user])
+            nav("/login")
+            console.log(getUsers)
         }
 
-        if (user.userName.length < 5 || user.userName.length > 10) return
-        if (user.passOne.length < 3 || user.passOne.length > 10) return
-        if (user.passOne !== user.passTwo) return
-
-        setUsers([...getUsers, user])
-        nav("/login")
-
-
-
     }
+
 
 
 

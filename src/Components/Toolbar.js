@@ -18,6 +18,7 @@ const Toolbar = () => {
     }
     return (
         <div className="toolbar d-flex ">
+            {getPage !== "/main" && <h2 className="p10 " onClick={() => goTo("/posts")}>CREATE POST</h2>}
             {getPage !== "/register" && <h2 className="p10 " onClick={() => goTo("/register")}>REGISTRATION</h2>}
             {getPage !== "/login" && <h2 className="p10" onClick={() => goTo("/login")}>LOGIN</h2>}
 

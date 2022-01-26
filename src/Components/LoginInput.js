@@ -10,11 +10,16 @@ const LoginInput = () => {
     const PasswordRef = useRef()
 
 
-    const {getUsers, setUsers} = useContext(MainContext)
-    const {getLoged} = useContext(MainContext)
+    const {getUsers} = useContext(MainContext)
+    const {setLoged} = useContext(MainContext)
 
-    function login () {
-        getUsers.find(x => x.userName === userNameRef.current.value && x.passOne === PasswordRef.current.value)
+
+    function login() {
+        const registered = getUsers.find(x => x.userName === userNameRef.current.value && x.passOne === PasswordRef.current.value)
+        console.log(registered)
+        setLoged(registered)
+        nav("/main")
+
 
     }
 
