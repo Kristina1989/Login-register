@@ -10,8 +10,7 @@ const LoginInput = () => {
     const PasswordRef = useRef()
 
 
-    const {getUsers} = useContext(MainContext)
-    const {setLoged} = useContext(MainContext)
+    const {getUsers, setLoged} = useContext(MainContext)
 
 
     function login() {
@@ -19,6 +18,7 @@ const LoginInput = () => {
         console.log(registered)
         setLoged(registered)
         nav("/main")
+
 
 
     }

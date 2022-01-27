@@ -8,13 +8,14 @@ const CreatePost = () => {
     const titleRef = useRef()
     const articleRef = useRef()
 
-    const {getPost, setPost} = useContext(MainContext)
+    const {getPost, getLoged, setPost} = useContext(MainContext)
 
 
     function CreatePost() {
         const post =  {
             title: titleRef.current.value,
-            article: articleRef.current.value
+            article: articleRef.current.value,
+            userName: getLoged.userName
         }
         setPost([...getPost, post])
         nav("/main")

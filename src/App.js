@@ -15,6 +15,7 @@ function App() {
     const [getPage, setPage] = useState("")
     const [getLoged, setLoged] = useState(null)
     const [getPost, setPost] = useState([])
+    const [getClicked, setClicked] = useState("Like")
 
 
 
@@ -24,7 +25,8 @@ function App() {
       <MainContext.Provider value={{getUsers, setUsers,
           getPage, setPage,
           getLoged, setLoged,
-          getPost, setPost
+          getPost, setPost,
+          getClicked, setClicked
       }}>
           <BrowserRouter>
               <Toolbar/>

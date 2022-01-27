@@ -5,7 +5,14 @@ import MainContext from "../Context/MainContext";
 const PostList = () => {
 
 
-    const {getPost, getLoged} = useContext(MainContext)
+    const {getPost, getLoged, getClicked, setClicked } = useContext(MainContext)
+
+    function like () {
+        if(getPost.userName !== getLoged.userName) {
+            setClicked("Dislike")
+        }
+
+    }
 
 
 
@@ -17,8 +24,14 @@ const PostList = () => {
                 <div>
                     <h3>{x.title}</h3>
                     <h5>{x.article}</h5>
+                    <h5>{x.userName}</h5>
                 </div>
-                <h5>{getLoged.userName}</h5>
+                <div className="m-10 d-flex a-center">
+                    <button onClick={()=> like ()}>{getClicked}</button>
+
+                </div>
+
+
             </div>)}
 
         </div>
