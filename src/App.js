@@ -15,7 +15,7 @@ function App() {
     const [getPage, setPage] = useState("")
     const [getLoged, setLoged] = useState(null)
     const [getPost, setPost] = useState([])
-    const [getClicked, setClicked] = useState("Like")
+
 
 
 
@@ -26,7 +26,6 @@ function App() {
           getPage, setPage,
           getLoged, setLoged,
           getPost, setPost,
-          getClicked, setClicked
       }}>
           <BrowserRouter>
               <Toolbar/>

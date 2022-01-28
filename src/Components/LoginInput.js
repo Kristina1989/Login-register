@@ -20,8 +20,10 @@ const LoginInput = () => {
         nav("/main")
 
 
+        console.log(getUsers)
 
     }
+
 
 
     return (

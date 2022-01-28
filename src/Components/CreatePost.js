@@ -15,7 +15,9 @@ const CreatePost = () => {
         const post =  {
             title: titleRef.current.value,
             article: articleRef.current.value,
-            userName: getLoged.userName
+            userName: getLoged.userName,
+            liked: [],
+            comment: []
         }
         setPost([...getPost, post])
         nav("/main")

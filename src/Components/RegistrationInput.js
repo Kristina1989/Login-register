@@ -23,21 +23,19 @@ const RegistrationInput = () => {
             }
             setUsers([...getUsers, user])
             nav("/login")
-            console.log(getUsers)
+
         }
 
     }
 
 
-
-
-
     return (
         <div className="d-flex a-center j-center column box">
             <input type="text" ref={userNameRef} placeholder="UserName"/>
-            <input type="password" ref={PassOneRef} placeholder="Password"/>
-            <input type="password" ref={PassTwoRef} placeholder="Confirm Password"/>
-            <button onClick={register}>Register</button>
+            <input type="text" ref={PassOneRef} placeholder="Password"/>
+            <input type="text" ref={PassTwoRef} placeholder="Confirm Password"/>
+            <button onClick={()=> {register();
+                console.log(getUsers)}}>Register</button>
         </div>
     );
 };
